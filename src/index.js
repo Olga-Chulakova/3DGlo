@@ -1,7 +1,5 @@
 import './styles/style.css';
 
-import one from './modules/one.js';
-import two from './modules/two.js';
+import timer from './modules/timer.js';
 
-one();
-two();
+timer('17 december 2025');
