@@ -1,10 +1,7 @@
 import smoothScroll from './smooth-scroll.js';
 
-const btnMenu = document.querySelector('.menu');
+const header = document.querySelector('header');
 const menuNav = document.querySelector('menu');
-const btnClose = menuNav.querySelector('.close-btn');
-const menuItems = menuNav.querySelectorAll('ul>li>a');
-
 
 const menu = () => {
 
@@ -12,19 +9,54 @@ const menu = () => {
         menuNav.classList.toggle('active-menu');
     }
 
-    btnMenu.addEventListener('click', handleMenu);
-    btnClose.addEventListener('click', handleMenu);
-    menuItems.forEach(menuItem => menuItem.addEventListener('click', handleMenu));
+    header.addEventListener('click', (e) => {
+         if (e.target.closest('.menu')) {
+           handleMenu();
+         }
+    })
 
-    menuItems.forEach(anchor => {
-        anchor.addEventListener('click', (e) => {
+    menuNav.addEventListener('click', (e) => {
+        if (e.target.closest('.close-btn')) {
+            handleMenu();
+        }
+
+        if (e.target.closest('ul>li>a')) {
             e.preventDefault();
-            smoothScroll(anchor);
-        })
+            smoothScroll(e.target);
+            handleMenu();
+        }
     })
 }
 
 export default menu;
+
+// Усложненное задание открытие и закрытие меню на глобальный документ
+
+// const menu = () => {
+
+//     const toggleMenu = () => {
+//         menuNav.classList.toggle('active-menu');
+//     }
+
+//     document.addEventListener('click', (e) => {
+//         if (e.target.closest('.menu')) {
+//             toggleMenu();
+//         } else if (e.target.closest('.close-btn')) {
+//             toggleMenu();
+//         } else if (e.target.closest('ul>li>a')) {
+//             e.preventDefault();
+//             smoothScroll(e.target);
+//             toggleMenu();
+//         } else if (!e.target.closest('menu')) {
+//             menuNav.classList.remove('active-menu');
+//         }
+//     })
+// }
+
+// export default menu;
+
+
+
 
 // Второй вариант решения скролла - с requestAnimationFrame
 
