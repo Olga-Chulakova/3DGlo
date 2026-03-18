@@ -19,6 +19,9 @@
     "url": "https://github.com/Olga-Chulakova/webpack-starter/issues"
   },
   "homepage": "https://github.com/Olga-Chulakova/webpack-starter#readme",
+    "dependencies": {
+    "swiper": "^12.1.2"
+  },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "css-loader": "^7.1.2",

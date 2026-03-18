@@ -7,6 +7,7 @@ import validation from './modules/validation.js';
 import initValidationBlur from './modules/validation-blur.js';
 import initTabs from './modules/tabs.js';
 import slider from './modules/slider.js'
+import sliderCarousel from './modules/sliderCarousel.js'
 
 
 timer('18 april 2026');
@@ -17,6 +18,7 @@ validation();
 initValidationBlur();
 initTabs();
 slider();
+sliderCarousel();
 
 
 // Усложненное задание и вызов функции с объектом к уроку №23
