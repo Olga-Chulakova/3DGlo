@@ -6,8 +6,9 @@ import scrollToService from './modules/scroll-to-service.js';
 import validation from './modules/validation.js';
 import initValidationBlur from './modules/validation-blur.js';
 import initTabs from './modules/tabs.js';
-import slider from './modules/slider.js'
-import sliderCarousel from './modules/sliderCarousel.js'
+import slider from './modules/slider.js';
+import sliderCarousel from './modules/sliderCarousel.js';
+import calc from './modules/calc.js'
 
 
 timer('18 april 2026');
@@ -19,6 +20,7 @@ initValidationBlur();
 initTabs();
 slider();
 sliderCarousel();
+calc(100);
 
 
 // Усложненное задание и вызов функции с объектом к уроку №23
