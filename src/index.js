@@ -6,6 +6,7 @@ import scrollToService from './modules/scroll-to-service.js';
 import validation from './modules/validation.js';
 import initValidationBlur from './modules/validation-blur.js';
 import initTabs from './modules/tabs.js';
+import slider from './modules/slider.js'
 
 
 timer('18 april 2026');
@@ -15,3 +16,13 @@ scrollToService();
 validation();
 initValidationBlur();
 initTabs();
+slider();
+
+
+// Усложненное задание и вызов функции с объектом к уроку №23
+// slider({
+//   sliderBlockSelector: ".portfolio-content",
+//   slidesSelector: ".portfolio-item",
+//   slideActiveClass: "portfolio-item-active",
+//   dotActiveClass: "dot-active"
+// });
