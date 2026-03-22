@@ -1,8 +1,9 @@
 const RULES = {
     number: /[^\d]/g,
-    text: /[^а-яА-Я\s-]/gi,
+    name: /[^а-яА-Я\s-]/gi,
     email: /[^\w@\-.!~*']/gi,
-    tel: /[^\d\-()]/g,
+    tel: /[^+\d()\-]/g,
+    message: /[^а-яА-Я\d\s,.!?();:'-]/gi,
 };
 
 const collapseSpaces = /\s+/g;

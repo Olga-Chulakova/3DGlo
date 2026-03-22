@@ -1,13 +1,21 @@
-import {RULES, collapseSpaces, collapseDashes, trimEdges} from './validation-rules.js';
+import { RULES, collapseSpaces, collapseDashes, trimEdges } from './validation-rules.js';
 
-const inputsText = document.querySelectorAll('input[type="text"][placeholder="Ваше имя"]');
+const inputsName = document.querySelectorAll('input[type="text"][placeholder="Ваше имя"]');
+const inputsMessage = document.querySelectorAll('input[placeholder="Ваше сообщение"]');
 const inputsMail = document.querySelectorAll('input[type="email"]');
 const inputsTel = document.querySelectorAll('input[type="tel"]');
 
-const formatText = (value) => {
-    value = value.replace(RULES.text, '');
+const formatMessage = (value) => {
+    value = value.replace(RULES.message, '');
     value = value.replace(collapseSpaces, ' ');
     value = value.replace(collapseDashes, '-');
+    value = value.replace(trimEdges, '');
+    return value;
+}
+
+const formatName = (value) => {
+    value = value.replace(RULES.name, '');
+    value = value.replace(collapseSpaces, ' ');
     value = value.replace(trimEdges, '');
     return value;
 }
@@ -27,9 +35,14 @@ const formatTel = (value) => {
 }
 
 const initValidationBlur = () => {
-    inputsText.forEach(input => {
+    inputsMessage.forEach(input => {
         input.addEventListener('blur', (e) => {
-            e.target.value = formatText(e.target.value);
+            e.target.value = formatMessage(e.target.value);
+        });
+    });
+    inputsName.forEach(input => {
+        input.addEventListener('blur', (e) => {
+            e.target.value = formatName(e.target.value);
         });
     });
     inputsMail.forEach(input => {

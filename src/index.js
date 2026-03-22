@@ -9,6 +9,7 @@ import initTabs from './modules/tabs.js';
 import slider from './modules/slider.js';
 import sliderCarousel from './modules/sliderCarousel.js';
 import calc from './modules/calc.js'
+import sendForm from './modules/sendForm.js';
 
 
 timer('18 april 2026');
@@ -21,6 +22,28 @@ initTabs();
 slider();
 sliderCarousel();
 calc(100);
+sendForm({
+    formId: 'form1',
+    someElem: [
+        {
+            type: 'block',
+            id: 'total'
+        }
+    ]
+})
+sendForm({
+    formId: 'form2'
+})
+sendForm({
+    formId: 'form3',
+    someElem: [
+        {
+            type: 'block',
+            id: 'total'
+        }
+    ]
+})
+
 
 
 // Усложненное задание и вызов функции с объектом к уроку №23
